@@ -1,0 +1,25 @@
+def format_address(address_string):
+
+
+    house_number = ""
+    street_name = ""
+
+
+    # Separate the house number from the street name.
+    address_parts = address_string.split() 
+    
+    for address_part in address_parts:
+       # Complete the if-statement with a string method.  
+       if address_part.isdigit():
+         house_number = address_part
+       else:
+         street_name += address_part + " "
+    # Remove the extra space at the end of the last "street_name".
+    street_name = street_name.strip()
+ 
+    # Use a string method to return the required formatted string.
+    return "House number {} on a street named {}".format(house_number, street_name)
+
+
+print(format_address("123 Main Street"))
+#Should print: "House number 123 on a street named Main Street"
